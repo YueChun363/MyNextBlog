@@ -18,7 +18,7 @@ export default function Page({
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const page = (context.query?.page as string) || 1;
   // 通过 API 请求数据
-  const uid = '1055183753713624';
+  const uid = process.env.uid as string;
   const { data, count } = await getArticles(uid, (+page - 1) * 10);
 
   // 将数据传递到页面上
