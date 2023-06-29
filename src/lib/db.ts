@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export async function getArticles(uid: string, cursor: number = 0) {
-  console.log("uid", uid, "cursor", cursor);
   const res = await axios.post(
     "https://api.juejin.cn/content_api/v1/article/query_list",
     {
